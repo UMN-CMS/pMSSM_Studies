@@ -32,6 +32,7 @@ cmake -DHEPMC3_ENABLE_ROOTIO:BOOL=OFF -DHEPMC3_ENABLE_TEST:BOOL=OFF  -DHEPMC3_IN
 make -j 4
 make install
 
+cd ${LOCALAREA}
 
 # Get pythia and make it
 wget https://pythia.org/download/pythia83/${PYTHIA}.tgz
@@ -40,4 +41,13 @@ tar xvfz ${PYTHIA}.tgz
 cd ${PYTHIA}
 
 ./configure --with-hepmc3-config=${LOCALAREA}/HepMC3/bin/HepMC3-config --with-hepmc3-bin=${LOCALAREA}/HepMC3/bin --with-hepmc3-lib=${LOCALAREA}/HepMC3/lib64 --with-hepmc3-include=${LOCALAREA}/HepMC3/include
+
+cp ../pmssm.cc examples/
+
+sed -i 's/main41/pmssm main41/g' examples/MakeFile
+
 make -j 4
+
+cd ${LOCALAREA}
+
+rm *.tar.gz *.tgz
