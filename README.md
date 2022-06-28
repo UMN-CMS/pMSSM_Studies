@@ -32,7 +32,7 @@ Around 10000 events (specified in `run.py`) are generated with all SUSY processe
 The script also generates a `.cmnd` file on-the-fly for configuring Pythia to generate events as specified.
 
 Once Pythia has finished and generated a HepMC file, this file is loaded into Delphes where the events can be simulated in a collider detector.
-Within `run.sh`, the user can specify which detector ``card'' to load into Delphes for simulation.
+Within `run.sh`, the user can specify which detector "card" to load into Delphes for simulation.
 The final output(s) returned to the user are two-fold.
 There is a ROOT file(s) containing the simulated events and placed in the user's EOS area with the same output folder name as specified above.
 Likewise, there is a text file(s) with some scraped information from Pythia regarding cross sections for different processes.
